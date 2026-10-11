@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Capital Media | Video & Motion Studio for Finance and SaaS</title>
+  <meta name="description" content="Capital Media is a video and motion studio for finance and SaaS brands. Explainers, launch films and always-on short-form that people finish watching, and that compliance signs off on." />
+  <meta name="theme-color" content="#0e0d0a" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230e0d0a'/%3E%3Cpath d='M12 44l12-12 9 7 19-21' stroke='%23f2b544' stroke-width='6' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <div class="atmos" aria-hidden="true"><i></i><i></i><i></i></div>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="vignette" aria-hidden="true"></div>
+  <div class="cols" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+  <div class="cursor" id="cursor" aria-hidden="true"><span id="cursorLabel"></span></div>
+
+  <!-- ===== NAV ===== -->
+  <header class="nav" id="nav">
+    <a href="#top" class="logo" aria-label="Capital Media home">
+      <svg class="logo__mark" viewBox="0 0 32 32" aria-hidden="true"><path d="M4 23l7-7 5 4 12-12" /></svg>
+      <span class="logo__word js-name">Capital Media</span>
+    </a>
+    <nav class="nav__links">
+      <a href="#work">Work</a>
+      <a href="#niches">Who it's for</a>
+      <a href="#services">Services</a>
+      <a href="#process">Process</a>
+    </nav>
+    <div class="nav__right">
+      <a href="#start" class="btn btn--solid btn--sm">Book a call</a>
+      <button class="burger" id="burger" aria-label="Open menu"><i></i><i></i></button>
+    </div>
+  </header>
+
+  <div class="menu" id="menu">
+    <a href="#work">Work</a>
+    <a href="#niches">Who it's for</a>
+    <a href="#services">Services</a>
+    <a href="#process">Process</a>
+    <a href="#start">Book a call</a>
+  </div>
+
+  <!-- section index (bottom-left) -->
+  <div class="sindex" id="sindex" aria-hidden="true">( <span id="sindexText">00 — INTRO</span> )</div>
+
+  <main id="top">
+
+    <!-- ===== HERO ===== -->
+    <section class="hero" data-index="00 — INTRO">
+      <canvas id="chart" class="hero__chart" aria-hidden="true"></canvas>
+      <div class="hero__inner wrap">
+        <p class="label reveal-up">( Video &amp; motion studio · Finance + SaaS )</p>
+        <h1 class="hero__title">
+          <span class="ln"><span>Video that makes</span></span>
+          <span class="ln"><span class="rot" id="rot"><em>brokerages</em></span></span>
+          <span class="ln"><span>impossible to <i class="serif">ignore</i>.</span></span>
+        </h1>
+        <div class="hero__row">
+          <p class="hero__sub reveal-up">We turn complex financial products and software into explainers, launch films and short-form that people actually finish watching, <span class="hl">and that compliance signs off on.</span></p>
+          <div class="chooser reveal-up">
+            <span class="chooser__q">What are you growing?</span>
+            <a href="#niches" class="chooser__opt" data-open-niche="finance">
+              <span>A finance brand</span><small>Brokerage · AMC · Fintech</small><b>→</b>
+            </a>
+            <a href="#niches" class="chooser__opt" data-open-niche="saas">
+              <span>A SaaS company</span><small>B2B · AI · Dev tools</small><b>→</b>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="hero__foot wrap">
+        <span class="label">Scroll</span>
+        <span class="label">Working on US hours · ET / PT</span>
+      </div>
+    </section>
+
+    <!-- ===== EXPERIENCE WALL ===== -->
+    <section class="exp" data-index="00 — TRACK RECORD">
+      <div class="wrap">
+        <div class="exp__head">
+          <p class="label">( Team experience )</p>
+          <h2 class="h2">Our team has shipped content for some of <i class="serif">India's biggest</i> finance brands.</h2>
+          <p class="muted">Millions of retail investors. Strict regulators. Daily deadlines. Now we're bringing that playbook to the US.</p>
+        </div>
+        <div class="exp__grid" id="expGrid"></div>
+      </div>
+    </section>
+
+    <!-- ===== 01 PROMISE ===== -->
+    <section class="promise" data-index="01 — THE PROMISE">
+      <div class="wrap">
+        <p class="label">( 01 — The promise )</p>
+        <p class="promise__text" id="promiseText">Finance and SaaS have the same problem. The product is brilliant, but the content is boring, confusing or stuck in legal review. We fix all three. Every frame is built to be understood in seconds, remembered for weeks, and approved on the first pass.</p>
+        <div class="kpis">
+          <div class="kpi"><b data-to="500" data-suf="+">0</b><span>Finance videos shipped</span></div>
+          <div class="kpi"><b data-to="48" data-suf="h">0</b><span>First-draft turnaround</span></div>
+          <div class="kpi"><b data-to="2" data-suf="">0</b><span>Niches. Nothing else.</span></div>
+          <div class="kpi"><b data-to="100" data-suf="%">0</b><span>Disclosure-ready workflow</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 02 NICHES ===== -->
+    <section class="niches" id="niches" data-index="02 — WHO IT'S FOR">
+      <div class="wrap">
+        <div class="sec-head">
+          <p class="label">( 02 — Who it's for )</p>
+          <h2 class="h2 big">We don't dabble.<br /><i class="serif">We specialise.</i></h2>
+        </div>
+        <div class="panels" id="panels">
+          <article class="panel is-open" data-niche="finance">
+            <div class="panel__bar"><span class="panel__n">( 01 )</span><span class="panel__vt">Finance</span></div>
+            <div class="panel__body">
+              <h3>Finance</h3>
+              <p class="panel__lead">For brands where one wrong word means a regulator's letter, and one boring video means a lost investor.</p>
+              <div class="panel__cols">
+                <div>
+                  <span class="label">We work with</span>
+                  <ul><li>Brokerages &amp; trading apps</li><li>Asset managers &amp; ETF issuers</li><li>Fintechs &amp; neobanks</li><li>RIAs &amp; wealth platforms</li><li>Finance creators &amp; newsletters</li></ul>
+                </div>
+                <div>
+                  <span class="label">We make</span>
+                  <ul><li>Fund &amp; product launch campaigns</li><li>Market explainers &amp; data-viz</li><li>App walkthroughs &amp; onboarding</li><li>Analyst-led talking heads</li><li>Disclosure-ready ad creative</li></ul>
+                </div>
+              </div>
+              <span class="panel__metric">Built for FINRA 2210 &amp; SEC Marketing Rule review workflows</span>
+            </div>
+          </article>
+          <article class="panel" data-niche="saas">
+            <div class="panel__bar"><span class="panel__n">( 02 )</span><span class="panel__vt">SaaS</span></div>
+            <div class="panel__body">
+              <h3>SaaS</h3>
+              <p class="panel__lead">For products that are hard to explain and easy to scroll past, until someone shows the outcome.</p>
+              <div class="panel__cols">
+                <div>
+                  <span class="label">We work with</span>
+                  <ul><li>B2B SaaS (Seed to Series C)</li><li>AI-native startups</li><li>Fintech infrastructure</li><li>Developer tools</li><li>Founders building in public</li></ul>
+                </div>
+                <div>
+                  <span class="label">We make</span>
+                  <ul><li>Launch &amp; feature films</li><li>UI motion &amp; product demos</li><li>Founder-led content</li><li>LinkedIn &amp; X video series</li><li>Paid social creative</li></ul>
+                </div>
+              </div>
+              <span class="panel__metric">Outcome first, interface second</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 03 CASE STUDIES ===== -->
+    <section class="work" id="work" data-index="03 — CASE STUDIES">
+      <div class="wrap">
+        <div class="sec-head sec-head--row">
+          <div>
+            <p class="label">( 03 — Case studies )</p>
+            <h2 class="h2 big">Proof,<br /><i class="serif">not portfolios.</i></h2>
+          </div>
+          <p class="muted sec-head__aside">Every project starts with a business problem and ends with a number. Open one to see the brief, the idea and the results.</p>
+        </div>
+        <div class="stack" id="stack"></div>
+      </div>
+    </section>
+
+    <!-- ===== 04 SERVICES ===== -->
+    <section class="services" id="services" data-index="04 — WHAT WE DO">
+      <div class="wrap">
+        <div class="sec-head sec-head--row">
+          <div>
+            <p class="label">( 04 — What we do )</p>
+            <h2 class="h2 big">Full-funnel video,<br /><i class="serif">zero guesswork.</i></h2>
+          </div>
+        </div>
+        <ol class="svc" id="svcList"></ol>
+      </div>
+    </section>
+
+    <!-- ===== 05 PROCESS (scroll-drawn chart) ===== -->
+    <section class="process" id="process" data-index="05 — HOW WE WORK">
+      <div class="process__pin">
+        <div class="wrap process__grid">
+          <div class="process__copy">
+            <p class="label">( 05 — How we work )</p>
+            <h2 class="h2">From brief to <i class="serif">compounding</i> results.</h2>
+            <div class="steps" id="steps">
+              <div class="step is-on"><span>01</span><h4>Discovery call</h4><p>30 minutes on your product, audience, competitors and what "winning" looks like.</p></div>
+              <div class="step"><span>02</span><h4>Content strategy</h4><p>Series formats, hooks and a 90-day calendar built for your platforms.</p></div>
+              <div class="step"><span>03</span><h4>Script &amp; storyboard</h4><p>Every claim sourced, every disclosure placed before a single frame is animated.</p></div>
+              <div class="step"><span>04</span><h4>Production &amp; review</h4><p>48-hour drafts. Frame-accurate comments. Review rounds built around your compliance team.</p></div>
+              <div class="step"><span>05</span><h4>Publish &amp; optimise</h4><p>Monthly performance reviews. We double down on what works and cut what doesn't.</p></div>
+            </div>
+          </div>
+          <div class="process__chart">
+            <svg id="procSvg" viewBox="0 0 600 420" preserveAspectRatio="none" aria-hidden="true">
+              <defs>
+                <linearGradient id="procFill" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stop-color="#f2b544" stop-opacity=".28" />
+                  <stop offset="1" stop-color="#f2b544" stop-opacity="0" />
+                </linearGradient>
+              </defs>
+              <g class="grid-lines"></g>
+              <path id="procArea" fill="url(#procFill)" />
+              <path id="procLine" fill="none" stroke="#f2b544" stroke-width="2.5" stroke-linejoin="round" />
+            </svg>
+            <div class="process__readout"><span class="label">Growth index</span><b id="procVal">100.0</b><i id="procDelta">+0.00%</i></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 06 START ===== -->
+    <section class="start" id="start" data-index="06 — START HERE">
+      <div class="wrap">
+        <p class="label">( 06 — The part where you email us )</p>
+        <h2 class="start__title"><span class="ln"><span>Send us one</span></span><span class="ln"><span>raw video. <i class="serif">We'll edit</i></span></span><span class="ln"><span><i class="serif">it free.</i></span></span></h2>
+        <div class="start__grid">
+          <div class="offer">
+            <ul>
+              <li><b>01</b> Book a 20-minute call</li>
+              <li><b>02</b> Pick one video that matters</li>
+              <li><b>03</b> Get a free edit in 72 hours, with no contract</li>
+            </ul>
+            <div class="offer__cta">
+              <a class="btn btn--solid btn--lg js-booking" href="#" target="_blank" rel="noopener">Book a free sample edit →</a>
+              <a class="btn btn--lg js-email" href="#">Email us</a>
+            </div>
+            <p class="muted small">Limited to 4 brands per month so every sample gets our A-team.</p>
+          </div>
+          <div class="clocks">
+            <div class="clock"><span class="label">New York</span><b id="cNY">--:--</b></div>
+            <div class="clock"><span class="label">San Francisco</span><b id="cSF">--:--</b></div>
+            <div class="clock"><span class="label">Studio · India</span><b id="cIN">--:--</b></div>
+            <p class="muted small">We overlap with your workday and deliver while you sleep, so you wake up to drafts.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer__top">
+      <a class="footer__email js-email" href="#">hello@capitalmedia.studio</a>
+      <div class="footer__socials" id="socials"></div>
+    </div>
+    <div class="footer__word" id="footerWord" aria-hidden="true">capital media</div>
+    <div class="wrap footer__bar">
+      <span>© <span id="year"></span> <span class="js-name">Capital Media</span>. Video &amp; motion for finance and SaaS.</span>
+      <a href="#top">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <!-- ===== CASE STUDY OVERLAY ===== -->
+  <div class="cs" id="cs" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Case study">
+    <div class="cs__bar">
+      <button class="cs__back" id="csClose">← All work</button>
+      <span class="cs__count label" id="csCount">01 / 03</span>
+      <button class="cs__next" id="csNextTop">Next case →</button>
+      <i class="cs__progress" id="csProgress"></i>
+    </div>
+    <div class="cs__scroll" id="csScroll">
+      <div class="cs__content" id="csContent"></div>
+    </div>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
