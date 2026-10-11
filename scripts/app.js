@@ -27,7 +27,7 @@
   function initTexture() {
     const img = new Image();
     img.onload = () => {
-      const y0 = Math.round(img.height * 0.5), bh = Math.round(img.height * 0.2);
+      const y0 = Math.round(img.height * 0.56), bh = Math.round(img.height * 0.06);
       const c = document.createElement("canvas");
       c.width = img.width; c.height = bh * 2;
       const x = c.getContext("2d");

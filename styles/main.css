@@ -403,3 +403,14 @@ main > section + section, main + .foot { margin-top: -2px; }
 .texture::after { background-position: 421px 97px; filter: invert(1); mix-blend-mode: soft-light; opacity: .45; }
 .texture::before { opacity: .5; }
 .texture::after { opacity: .22; }
+
+/* =========================================================
+   Back to clean: no dithered seams, no muddy overlays,
+   and only a whisper of grain (micro1 level).
+   ========================================================= */
+.light__pin::before, .sky::before, .start::before, .wall::before { display: none; }
+.steps__media::after { display: none; }
+.texture::before { opacity: .09; mix-blend-mode: multiply; }
+.texture::after { display: none; }
+/* the window text sits on bright clouds, so it is dark */
+.window__text { color: var(--ink); text-shadow: 0 0 40px rgba(255,255,255,.7); }
