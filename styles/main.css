@@ -381,3 +381,25 @@ em { font-family: var(--serif); font-style: italic; font-weight: 300; letter-spa
 .wall > .seam, .sky > .seam, .start > .seam { position: absolute; z-index: 6; }
 main > section + section, main + .foot { margin-top: -2px; }
 .seam { bottom: -1px; }
+
+/* =========================================================
+   micro1-style texture: one fixed stipple layer over the whole page.
+   Uses the dense lower part of the transparent stipple, so the grain
+   is even everywhere. Dark dots darken, a light copy lifts the shadows.
+   ========================================================= */
+.texture { position: fixed; inset: 0; z-index: 300; pointer-events: none; }
+.texture::before, .texture::after {
+  content: ""; position: absolute; inset: 0;
+  background: url(../assets/img/stipple.webp) center bottom / 100% 280% no-repeat;
+}
+.texture::before { mix-blend-mode: soft-light; opacity: .55; }
+.texture::after { filter: invert(1); mix-blend-mode: soft-light; opacity: .35; background-position: center 96%; transform: scaleX(-1); }
+.seam::after { background-image: url(../assets/img/stipple.webp); }
+.seam--light::after { mix-blend-mode: screen; }
+.hero__copy { margin-bottom: 0; }
+.hero .seam { height: 18vh; }
+.texture::before, .texture::after { background: var(--tex) 0 0 / auto repeat; transform: none; filter: none; }
+.texture::before { mix-blend-mode: soft-light; opacity: .7; }
+.texture::after { background-position: 421px 97px; filter: invert(1); mix-blend-mode: soft-light; opacity: .45; }
+.texture::before { opacity: .5; }
+.texture::after { opacity: .22; }

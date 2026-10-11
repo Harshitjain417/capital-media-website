@@ -21,6 +21,24 @@
   // progress of a tall sticky section: 0 when its top hits the viewport top, 1 when its bottom does
   const progress = (el, vh) => { const r = el.getBoundingClientRect(); return clamp(-r.top / (r.height - vh)); };
 
+  /* ---------------- texture ----------------
+     Cut an evenly dense band out of the stipple and mirror it,
+     so the page gets a seamless grain tile at native dot size. */
+  function initTexture() {
+    const img = new Image();
+    img.onload = () => {
+      const y0 = Math.round(img.height * 0.5), bh = Math.round(img.height * 0.2);
+      const c = document.createElement("canvas");
+      c.width = img.width; c.height = bh * 2;
+      const x = c.getContext("2d");
+      x.drawImage(img, 0, y0, img.width, bh, 0, 0, img.width, bh);
+      x.translate(0, bh * 2); x.scale(1, -1);
+      x.drawImage(img, 0, y0, img.width, bh, 0, 0, img.width, bh);
+      try { document.documentElement.style.setProperty("--tex", `url(${c.toDataURL("image/png")})`); } catch (e) {}
+    };
+    img.src = "assets/img/stipple.webp";
+  }
+
   /* ---------------- content ---------------- */
   function fill() {
     $$(".js-email").forEach((a) => (a.href = `mailto:${SITE.email}`));
@@ -29,8 +47,6 @@
     $("#year").textContent = new Date().getFullYear();
     $("#socials").innerHTML = Object.entries(SITE.socials || {}).filter(([, v]) => v)
       .map(([k, v]) => `<a href="${esc(v)}" target="_blank" rel="noopener">${esc(k)}</a>`).join("");
-    const logos = EXPERIENCE.map((b) => `<span>${esc(b.name)}</span>`).join("");
-    $("#heroLogos").innerHTML = logos + logos;
     $("#wallNames").innerHTML = EXPERIENCE.map((b) => `<li><b>${esc(b.name)}</b><small>${esc(b.type)}</small></li>`).join("");
   }
 
@@ -317,6 +333,7 @@
     requestAnimationFrame(loop);
   }
 
+  initTexture();
   fill();
   initRotator();
   initClocks();
