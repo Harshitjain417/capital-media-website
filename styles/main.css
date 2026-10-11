@@ -320,3 +320,64 @@ em { font-family: var(--serif); font-style: italic; font-weight: 300; letter-spa
 .cpanel__bar { background: linear-gradient(180deg, rgba(14,15,17,.92) 40%, rgba(14,15,17,0)); padding-bottom: 26px; }
 @media (max-width: 900px) { .ccard:nth-child(n) .ccard__panel { order: -1; } }
 @media (max-width: 600px) { .light__item { font-size: 6.6vw; } }
+
+/* =========================================================
+   Dithered seams: no hard edges between scenes
+   ========================================================= */
+.seam { position: absolute; left: 0; right: 0; bottom: 0; height: 26vh; z-index: 6; pointer-events: none; background: linear-gradient(180deg, transparent 0%, var(--to) 92%); }
+.seam::after {
+  content: ""; position: absolute; inset: 0;
+  background: url(../assets/img/stipple.jpg) center / cover no-repeat;
+  -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 35%, #000 75%, transparent 100%);
+  mask-image: linear-gradient(180deg, transparent 0%, #000 35%, #000 75%, transparent 100%);
+}
+.seam--dark::after { mix-blend-mode: multiply; opacity: .9; }
+.seam--light::after { filter: invert(1); mix-blend-mode: screen; opacity: .85; }
+.hero .seam { height: 20vh; z-index: 2; }
+
+/* stipple texture also lives inside the big quiet backgrounds */
+.light__pin::before, .sky::before, .start::before, .wall::before {
+  content: ""; position: absolute; inset: 0; pointer-events: none; z-index: 0;
+  background: url(../assets/img/stipple.jpg) center bottom / cover no-repeat; opacity: .16; mix-blend-mode: multiply;
+}
+.light__pin::before { opacity: .35; }
+.wall > *, .sky > *, .start > * { position: relative; z-index: 1; }
+
+/* softer edges on framed images */
+.steps__media { box-shadow: 0 0 0 1px rgba(243,241,236,.06), 0 40px 80px -30px rgba(0,0,0,.6); }
+.steps__media::after { content: ""; position: absolute; inset: 0; border-radius: inherit; box-shadow: inset 0 0 60px 20px #2a2118; pointer-events: none; }
+
+/* =========================================================
+   Hero brand strip: proof in the first screen
+   ========================================================= */
+.hero__trust { position: absolute; left: 0; right: 0; bottom: 22px; z-index: 3; display: flex; flex-direction: column; align-items: center; gap: 12px; }
+.hero__trust-label { font-size: 12px; letter-spacing: .16em; text-transform: uppercase; color: rgba(243,241,236,.7); }
+.hero__logos { width: min(1100px, 100%); overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent); mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent); }
+.hero__track { display: flex; width: max-content; animation: logos 38s linear infinite; }
+.hero__track span { padding: 0 26px; font-size: clamp(17px, 1.6vw, 22px); font-weight: 400; letter-spacing: -.01em; white-space: nowrap; color: #fff; opacity: .92; display: flex; align-items: center; gap: 26px; }
+.hero__track span::after { content: "·"; color: var(--lamp); }
+@keyframes logos { to { transform: translateX(-50%); } }
+.hero__copy { margin-bottom: 70px; }
+
+/* wall now follows the hero: lead with the names */
+.wall { padding-top: 0; }
+.wall__names b { font-size: 20px; }
+/* fixes: keep the brand strip above the hero seam, no visible image boxes */
+.hero .seam { height: 12vh; }
+.hero__trust { bottom: calc(12vh + 6px); }
+.hero__trust::before { content: ""; position: absolute; left: 0; right: 0; top: -30px; bottom: -20px; z-index: -1; background: linear-gradient(180deg, transparent, rgba(14,15,17,.45) 40%, rgba(14,15,17,.45) 70%, transparent); }
+.light__pin::before { display: none; }
+.wall__lamp {
+  -webkit-mask-image: radial-gradient(ellipse 48% 78% at 50% 22%, #000 52%, transparent 100%);
+  mask-image: radial-gradient(ellipse 48% 78% at 50% 22%, #000 52%, transparent 100%);
+}
+/* seams end in a flat band of the next scene's colour, so the join is invisible */
+.seam { background: linear-gradient(180deg, transparent 0%, var(--to) 72%, var(--to) 100%); }
+.seam::after {
+  -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 28%, #000 50%, transparent 78%);
+  mask-image: linear-gradient(180deg, transparent 0%, #000 28%, #000 50%, transparent 78%);
+}
+.seam::after { background-size: 100% 100%; }
+.wall > .seam, .sky > .seam, .start > .seam { position: absolute; z-index: 6; }
+main > section + section, main + .foot { margin-top: -2px; }
+.seam { bottom: -1px; }

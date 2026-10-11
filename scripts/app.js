@@ -29,6 +29,8 @@
     $("#year").textContent = new Date().getFullYear();
     $("#socials").innerHTML = Object.entries(SITE.socials || {}).filter(([, v]) => v)
       .map(([k, v]) => `<a href="${esc(v)}" target="_blank" rel="noopener">${esc(k)}</a>`).join("");
+    const logos = EXPERIENCE.map((b) => `<span>${esc(b.name)}</span>`).join("");
+    $("#heroLogos").innerHTML = logos + logos;
     $("#wallNames").innerHTML = EXPERIENCE.map((b) => `<li><b>${esc(b.name)}</b><small>${esc(b.type)}</small></li>`).join("");
   }
 
