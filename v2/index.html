@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Capital Media | Video & Motion for Finance and SaaS</title>
+  <meta name="description" content="Capital Media is a video and motion studio for US finance and SaaS brands. Explainers, launch films and always-on short-form, built around your compliance team." />
+  <meta name="theme-color" content="#07090d" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2307090d'/%3E%3Ctext x='32' y='43' font-family='Arial Black,Arial' font-weight='900' font-size='30' text-anchor='middle' fill='%234d8dff'%3ECM%3C/text%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="glows" aria-hidden="true"><i></i><i></i><i></i></div>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="cursor" id="cursor" aria-hidden="true"><span id="cursorLabel"></span></div>
+
+  <!-- ===== TOP BAR ===== -->
+  <header class="bar" id="bar">
+    <a href="#top" class="mark"><b>C</b><b>M</b><span class="js-name">Capital Media</span></a>
+    <nav class="bar__nav">
+      <a href="#niches">Niches</a>
+      <a href="#work">Case studies</a>
+      <a href="#services">Rate card</a>
+      <a href="#process">Process</a>
+    </nav>
+    <div class="bar__right">
+      <span class="nyse" id="nyse"><i></i><span id="nyseText">NYSE</span></span>
+      <a href="#start" class="pill-btn">Free sample edit</a>
+      <button class="burger" id="burger" aria-label="Open menu"><i></i><i></i></button>
+    </div>
+  </header>
+  <div class="sheet" id="sheet">
+    <a href="#niches">Niches</a><a href="#work">Case studies</a><a href="#services">Rate card</a><a href="#process">Process</a><a href="#start">Free sample edit</a>
+  </div>
+
+  <main id="top">
+
+    <!-- ===== PORTAL HERO: scroll zooms through the word ===== -->
+    <section class="portal" id="portal">
+      <div class="portal__pin">
+        <canvas class="portal__scene" id="scene" aria-hidden="true"></canvas>
+
+        <div class="portal__after" id="after">
+          <p class="eyebrow">( Video &amp; motion studio · On US hours )</p>
+          <h1 class="after__title">Content for <span class="rot" id="rot">brokerages</span><br />that compliance approves<br />and investors <em>finish.</em></h1>
+          <div class="after__row">
+            <p class="after__sub">Explainers, launch films and always-on short-form for US finance and SaaS brands. Nothing else, ever.</p>
+            <div class="after__ctas">
+              <a href="#work" class="btn btn--fill">See the case studies</a>
+              <a href="#niches" class="btn">Who we work with</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="portal__mask" id="mask">
+          <div class="portal__word" id="word" aria-label="Capital"><span>C</span><span>A</span><span>P</span><span id="zoomLetter">I</span><span>T</span><span>A</span><span>L</span></div>
+        </div>
+
+        <div class="portal__ui" id="portalUi">
+          <span class="eyebrow">Video &amp; motion for finance + SaaS</span>
+          <span class="eyebrow scrollcue">Scroll to enter <i></i></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== QUOTE BOARD (team experience) ===== -->
+    <section class="board" aria-label="Team experience">
+      <div class="board__head wrap">
+        <p class="eyebrow">( Track record )</p>
+        <p class="board__lead">Our team has shipped content for India's biggest brokerages and fund houses: <span>millions of retail investors, strict regulators, daily deadlines.</span> Now we're bringing that playbook to the US.</p>
+      </div>
+      <div class="board__rail"><div class="board__track" id="boardTrack"></div></div>
+    </section>
+
+    <!-- ===== NICHES ===== -->
+    <section class="niches wrap" id="niches">
+      <div class="sec-head">
+        <p class="eyebrow">( 01 — Built only for )</p>
+        <h2 class="h2">Two industries.<br /><span class="dim">Zero generalists.</span></h2>
+      </div>
+      <div class="nrows" id="nrows">
+        <article class="nrow is-open" data-key="finance">
+          <button class="nrow__head" aria-expanded="true">
+            <span class="nrow__n">01</span><span class="nrow__name">Finance</span><span class="nrow__tag">Brokerages · AMCs · Fintech · RIAs</span><span class="nrow__plus"></span>
+          </button>
+          <div class="nrow__body"><div><div class="nrow__grid">
+            <p class="nrow__lead">For brands where one wrong word means a regulator's letter, and one boring video means a lost investor.</p>
+            <div><span class="eyebrow">Who</span><ul><li>Brokerages &amp; trading apps</li><li>Asset managers &amp; ETF issuers</li><li>Fintechs &amp; neobanks</li><li>RIAs &amp; wealth platforms</li></ul></div>
+            <div><span class="eyebrow">What</span><ul><li>Fund &amp; product launches</li><li>Market explainers &amp; data-viz</li><li>App walkthroughs</li><li>Disclosure-ready ad creative</li></ul></div>
+          </div></div></div>
+        </article>
+        <article class="nrow" data-key="saas">
+          <button class="nrow__head" aria-expanded="false">
+            <span class="nrow__n">02</span><span class="nrow__name">SaaS</span><span class="nrow__tag">B2B · AI · Fintech infra · Dev tools</span><span class="nrow__plus"></span>
+          </button>
+          <div class="nrow__body"><div><div class="nrow__grid">
+            <p class="nrow__lead">For products that are hard to explain and easy to scroll past, until someone shows the outcome.</p>
+            <div><span class="eyebrow">Who</span><ul><li>B2B SaaS, Seed to Series C</li><li>AI-native startups</li><li>Fintech infrastructure</li><li>Developer tools</li></ul></div>
+            <div><span class="eyebrow">What</span><ul><li>Launch &amp; feature films</li><li>UI motion &amp; product demos</li><li>Founder-led content</li><li>LinkedIn &amp; X video series</li></ul></div>
+          </div></div></div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== CASE STUDIES: pinned horizontal gallery ===== -->
+    <section class="hscroll" id="work">
+      <div class="hscroll__pin">
+        <div class="hscroll__head wrap">
+          <div>
+            <p class="eyebrow">( 02 — Case studies )</p>
+            <h2 class="h2">Every project ends<br /><span class="dim">with a number.</span></h2>
+          </div>
+          <div class="hscroll__meter"><span id="hsCount">01</span><i><b id="hsBar"></b></i><span id="hsTotal">03</span></div>
+        </div>
+        <div class="hscroll__track" id="hsTrack"></div>
+      </div>
+    </section>
+
+    <!-- ===== RATE CARD ===== -->
+    <section class="rates wrap" id="services">
+      <div class="sec-head sec-head--split">
+        <div>
+          <p class="eyebrow">( 03 — Rate card )</p>
+          <h2 class="h2">What we make,<br /><span class="dim">quoted like a ticker.</span></h2>
+        </div>
+        <p class="sec-head__aside">Hover a line for the details. Every engagement includes scripting, motion, sound and compliance-friendly revision rounds.</p>
+      </div>
+      <div class="quote" role="table" aria-label="Services">
+        <div class="quote__row quote__row--head" role="row">
+          <span role="columnheader">Symbol</span><span role="columnheader">Service</span><span role="columnheader" class="h-t">Turnaround</span><span role="columnheader" class="h-for">Best for</span><span role="columnheader" class="h-fmt">Format</span>
+        </div>
+        <div id="quoteRows"></div>
+      </div>
+    </section>
+
+    <!-- ===== PROCESS ===== -->
+    <section class="steps wrap" id="process">
+      <div class="sec-head">
+        <p class="eyebrow">( 04 — Process )</p>
+        <h2 class="h2">Brief on Monday.<br /><span class="dim">Draft by Wednesday.</span></h2>
+      </div>
+      <ol class="tl" id="tl">
+        <i class="tl__line"><b id="tlFill"></b></i>
+        <li><span class="tl__n">01</span><div><h3>Discovery call</h3><p>30 minutes on your product, audience, competitors and what winning looks like.</p></div><span class="tl__t">Day 1</span></li>
+        <li><span class="tl__n">02</span><div><h3>Content strategy</h3><p>Series formats, hooks and a 90-day calendar built for your platforms.</p></div><span class="tl__t">Day 2–3</span></li>
+        <li><span class="tl__n">03</span><div><h3>Script &amp; storyboard</h3><p>Every claim sourced and every disclosure placed before a single frame is animated.</p></div><span class="tl__t">Day 3–5</span></li>
+        <li><span class="tl__n">04</span><div><h3>Production &amp; review</h3><p>48-hour drafts, frame-accurate comments, and review rounds planned around your compliance team.</p></div><span class="tl__t">48h / draft</span></li>
+        <li><span class="tl__n">05</span><div><h3>Publish &amp; optimise</h3><p>Monthly performance reviews. We double down on what works and cut what doesn't.</p></div><span class="tl__t">Ongoing</span></li>
+      </ol>
+    </section>
+
+    <!-- ===== START ===== -->
+    <section class="start" id="start">
+      <div class="wrap start__grid">
+        <div>
+          <p class="eyebrow">( 05 — Start here )</p>
+          <h2 class="start__title">Send one raw video.<br /><span>We'll edit it free.</span></h2>
+          <p class="start__sub">Book a 20-minute call, pick one video that matters, and get a finished edit in 72 hours. No contract. Four brands a month.</p>
+          <div class="clocks">
+            <div><span class="eyebrow">New York</span><b id="cNY">--</b></div>
+            <div><span class="eyebrow">San Francisco</span><b id="cSF">--</b></div>
+            <div><span class="eyebrow">Studio, India</span><b id="cIN">--</b></div>
+          </div>
+        </div>
+        <div class="orb-zone" id="orbZone">
+          <a class="orb js-booking" id="orb" href="#" target="_blank" rel="noopener"><span>Book a<br />free edit</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8" /></svg></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="foot__marquee" aria-hidden="true"><div class="foot__track" id="footTrack"></div></div>
+    <div class="wrap foot__bar">
+      <a class="js-email foot__mail" href="#">hello@capitalmedia.studio</a>
+      <div class="foot__soc" id="socials"></div>
+      <span class="foot__copy">© <span id="year"></span> Capital Media</span>
+    </div>
+  </footer>
+
+  <!-- ===== CASE OVERLAY ===== -->
+  <div class="case" id="case" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Case study">
+    <div class="case__wipe" id="caseWipe"></div>
+    <div class="case__panel" id="casePanel">
+      <div class="case__top">
+        <button class="case__btn" id="caseClose">Close ✕</button>
+        <span class="eyebrow" id="caseIdx">01 / 03</span>
+        <button class="case__btn" id="caseNext">Next case →</button>
+      </div>
+      <div class="case__body" id="caseBody"></div>
+    </div>
+  </div>
+
+  <script src="../js/data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
