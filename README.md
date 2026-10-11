@@ -17,15 +17,14 @@ Each case study shows an animated "results chart" until you add a video:
 The video plays muted in the card and in the case-study page.
 
 ## Page structure
-1. Ticker tape of results + live NYSE open/closed status
-2. Hero: "Video that makes [brokerages / fund managers / …] impossible to ignore" + live candlestick chart with crosshair
-3. Team experience wall
-4. 01 Promise: scroll-lit statement + KPIs
-5. 02 Who it's for: expanding Finance / SaaS panels
-6. 03 Case studies: stacking cards that open into a full case-study page (← → keys, Next case, Esc)
-7. 04 Services
-8. 05 Process: growth chart that draws itself as you scroll
-9. 06 Free sample edit offer + New York / SF / India clocks
+1. Hero: "Video that makes [brokerages / fund managers / …] impossible to ignore" + live candlestick chart with crosshair
+2. Team experience wall
+3. 01 Promise: scroll-lit statement + KPIs
+4. 02 Who it's for: expanding Finance / SaaS panels
+5. 03 Case studies: stacking cards that open into a full case-study page (← → keys, Next case, Esc)
+6. 04 Services
+7. 05 Process: growth chart that draws itself as you scroll
+8. 06 Free sample edit offer + New York / SF / India clocks
 
 ## Put it online
 Drag the folder onto app.netlify.com/drop, then connect your domain (e.g. capitalmedia.studio).

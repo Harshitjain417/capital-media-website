@@ -34,15 +34,6 @@
       socials.insertAdjacentHTML("beforeend", `<a href="${esc(v)}" target="_blank" rel="noopener">${esc(k)} ↗</a>`);
     });
 
-    // ticker tape built from case-study results
-    const items = [];
-    CASES.forEach((c) => c.results.forEach((r) => {
-      const isDown = /^(lower|shorter)|cost per/i.test(r.label);
-      items.push(`<span class="tape__item"><b>${esc(c.sector.split("·")[1] || c.sector).trim()}</b>${esc(r.label)} ${isDown ? "▼" : "▲"} ${fmt(r.n)}${esc(r.suf)}</span>`);
-    }));
-    items.push(`<span class="tape__item"><b>Studio</b>48h first drafts ▲</span>`, `<span class="tape__item"><b>Niches</b>Finance + SaaS only</span>`);
-    $("#tapeTrack").innerHTML = items.join("") + items.join("");
-
     // experience wall
     $("#expGrid").innerHTML = EXPERIENCE.map((b) => `<div class="brand"><b>${esc(b.name)}</b><span>${esc(b.type)}</span></div>`).join("");
     const grid = $("#expGrid");
@@ -89,16 +80,10 @@
     });
   }
 
-  /* ---------------- clocks & market status ---------------- */
+  /* ---------------- clocks ---------------- */
   function initClocks() {
     const t = (tz) => new Intl.DateTimeFormat("en-US", { hour: "numeric", minute: "2-digit", hour12: true, timeZone: tz }).format(new Date());
     const tick = () => {
-      const ny = new Date(new Date().toLocaleString("en-US", { timeZone: "America/New_York" }));
-      const mins = ny.getHours() * 60 + ny.getMinutes();
-      const open = ny.getDay() > 0 && ny.getDay() < 6 && mins >= 570 && mins < 960;
-      $("#market").classList.toggle("is-open", open);
-      $("#marketLabel").textContent = open ? "NYSE OPEN" : "NYSE CLOSED";
-      $("#nyTime").textContent = t("America/New_York") + " ET";
       $("#cNY").textContent = t("America/New_York");
       $("#cSF").textContent = t("America/Los_Angeles");
       $("#cIN").textContent = t("Asia/Kolkata");
