@@ -414,3 +414,54 @@ main > section + section, main + .foot { margin-top: -2px; }
 .texture::after { display: none; }
 /* the window text sits on bright clouds, so it is dark */
 .window__text { color: var(--ink); text-shadow: 0 0 40px rgba(255,255,255,.7); }
+
+/* =========================================================
+   Interactivity pass (backup of the previous state: /cinematic-v1/)
+   ========================================================= */
+/* a touch more grain */
+.texture::before { opacity: .14; }
+
+/* heavier, more confident type */
+body { font-weight: 400; }
+.hero__title, .fog__line, .light__title, .light__item, .window__text, .sky__title,
+.ccard__metric b, .steps__title, .wall__title, .start__title, .foot__line, .cp-title, .cp-big b, .cp-res b, .cp-next strong { font-weight: 400; }
+.ccard__title, .steps__list li h3, .wall__names b { font-weight: 500; }
+.hero__sub, .wall__sub, .start__sub, .steps__list li p, .light__desc { font-weight: 400; }
+em { font-weight: 400; }
+
+/* custom cursor */
+.cursor { position: fixed; left: 0; top: 0; z-index: 400; pointer-events: none; width: 10px; height: 10px; margin: -5px 0 0 -5px; border-radius: 50%; background: var(--paper); mix-blend-mode: difference; display: grid; place-items: center; transition: width .4s var(--ease), height .4s var(--ease), margin .4s var(--ease), background .3s; }
+.cursor span { font-size: 12px; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; color: var(--ink); opacity: 0; white-space: nowrap; transition: opacity .25s; }
+.cursor.is-link { width: 44px; height: 44px; margin: -22px 0 0 -22px; }
+.cursor.is-label { width: 104px; height: 104px; margin: -52px 0 0 -52px; background: var(--lamp); mix-blend-mode: normal; }
+.cursor.is-label span { opacity: 1; }
+@media (hover: none), (pointer: coarse) { .cursor { display: none; } }
+
+/* word-by-word reveal for big headings */
+.wr { display: inline-block; opacity: 0; transform: translateY(.35em); filter: blur(8px); transition: opacity .8s var(--ease), transform .9s var(--ease), filter .8s var(--ease); transition-delay: calc(var(--i) * 45ms); }
+.is-in .wr { opacity: 1; transform: none; filter: none; }
+
+/* hero follows the mouse */
+.hero__img { translate: calc(var(--px, 0) * -18px) calc(var(--py, 0) * -12px); transition: translate .8s var(--ease); }
+.hero__copy { translate: calc(var(--px, 0) * 10px) calc(var(--py, 0) * 8px); transition: translate .8s var(--ease); }
+
+/* case panels tilt toward the cursor on hover */
+.ccard__panel { transform: rotateX(calc(var(--tilt, 1) * 22deg + var(--ry, 0deg))) rotateY(calc(var(--tilt, 1) * var(--ty, -14deg) + var(--rx, 0deg))) rotateZ(calc(var(--tilt, 1) * var(--tz, 4deg))) scale(calc(1 - var(--tilt, 1) * .08)); transition: box-shadow .4s; }
+.ccard__panel::after { content: ""; position: absolute; inset: 0; z-index: 3; pointer-events: none; background: radial-gradient(420px circle at var(--gx, 50%) var(--gy, 50%), rgba(255,255,255,.14), transparent 60%); opacity: 0; transition: opacity .4s; }
+.ccard__panel:hover::after { opacity: 1; }
+
+/* lamp-light spotlight on the track record wall */
+.wall__spot { position: absolute; inset: 0; z-index: 0; pointer-events: none; background: radial-gradient(520px circle at var(--sx, 50%) var(--sy, 30%), rgba(255, 236, 200, .55), transparent 65%); opacity: 0; transition: opacity .5s; mix-blend-mode: soft-light; }
+.wall:hover .wall__spot { opacity: 1; }
+.wall__names li { position: relative; overflow: hidden; }
+.wall__names li::before { content: ""; position: absolute; inset: 0; background: radial-gradient(160px circle at var(--lx, 50%) var(--ly, 50%), rgba(241,194,125,.35), transparent 70%); opacity: 0; transition: opacity .3s; }
+.wall__names li:hover::before { opacity: 1; }
+.wall__names li > * { position: relative; }
+
+/* magnetic buttons */
+.pill, .nav__cta { transition: transform .5s var(--ease), background .3s; will-change: transform; }
+
+/* services in the light can be clicked */
+.light__item { pointer-events: auto; cursor: pointer; }
+.light__mask { pointer-events: none; }
+.light__mask .light__item { pointer-events: auto; }

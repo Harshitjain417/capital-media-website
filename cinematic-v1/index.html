@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Capital Media | Creative Video Studio for Finance and SaaS</title>
+  <meta name="description" content="Capital Media is a creative video studio for US finance, fintech and SaaS brands. Calm, cinematic stories that make complex products feel effortless." />
+  <meta name="theme-color" content="#0e0f11" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230e0f11'/%3E%3Ctext x='30' y='44' font-family='Arial' font-weight='600' font-size='34' text-anchor='middle' fill='%23f3f1ec'%3Ec%3C/text%3E%3Ccircle cx='47' cy='42' r='4' fill='%23f1c27d'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600&family=Newsreader:ital,opsz,wght@1,6..72,300;1,6..72,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles/main.css" />
+</head>
+<body>
+  <div class="texture" aria-hidden="true"></div>
+
+  <!-- ============ NAV: spread at top, morphs into a floating pill ============ -->
+  <header class="nav" id="nav">
+    <nav class="nav__list" aria-label="Main">
+      <a href="#fog">Why us</a>
+      <a href="#light">What we make</a>
+      <a href="#work">Case studies</a>
+      <a href="#steps">Process</a>
+    </nav>
+    <a href="#top" class="nav__logo" aria-label="Capital Media home"><span class="nav__full">capital media</span><span class="nav__short">c</span><i>.</i></a>
+    <a href="#start" class="nav__cta"><span>Get in touch</span><b aria-hidden="true">›</b></a>
+  </header>
+
+  <main id="top">
+
+    <!-- ============ 1. HERO · chair on the hill ============ -->
+    <section class="hero" id="hero">
+      <div class="hero__img" id="heroImg" style="background-image:url(../assets/img/chair-hill.jpg)"></div>
+      <div class="hero__shade"></div>
+      <div class="hero__copy" id="heroCopy">
+        <p class="kicker">A creative video studio for <span class="rot" id="rot">brokerages</span></p>
+        <h1 class="hero__title">Complex products,<br /><em>effortless</em> stories.</h1>
+        <p class="hero__sub">We make explainers, launch films and short-form for US finance, fintech and SaaS brands. Calm, cinematic videos that people actually finish.</p>
+      </div>
+      <div class="hero__foot"><span>Scroll</span><span>Working on US hours</span></div>
+    </section>
+
+    <!-- ============ 2. WALL · track record under the lamp ============ -->
+    <section class="wall" id="record">
+      <div class="wall__lamp" style="background-image:url(../assets/img/lamp-wall.jpg)" aria-hidden="true"></div>
+      <div class="wrap wall__inner">
+        <p class="kicker kicker--ink">Track record</p>
+        <h2 class="wall__title">We've spent years in the room where India's biggest finance brands make their content.</h2>
+        <p class="wall__sub">Millions of retail investors, strict regulators and daily deadlines. Now we're bringing that playbook to the US.</p>
+        <ul class="wall__names" id="wallNames"></ul>
+      </div>
+    </section>
+
+    <!-- ============ 2. FOG · lost in the feed ============ -->
+    <section class="fog" id="fog">
+      <div class="fog__pin">
+        <div class="fog__img" id="fogImg" style="background-image:url(../assets/img/van-fog.jpg)"></div>
+        <div class="fog__layer" id="fogLayer" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+        <div class="fog__lines">
+          <p class="fog__line" data-at="0.08">Every day, your investors scroll past<br /><b>thousands of videos.</b></p>
+          <p class="fog__line" data-at="0.38">Most finance content<br /><b>disappears into the fog.</b></p>
+          <p class="fog__line" data-at="0.66">Yours should <em>cut through it.</em></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 3. LIGHT · services pass through the lamp ============ -->
+    <section class="light" id="light">
+      <div class="light__pin">
+        <div class="light__lamp" style="background-image:url(../assets/img/lamp-beam.jpg)" aria-hidden="true"></div>
+        <div class="light__head">
+          <p class="kicker kicker--dark">What we make</p>
+          <h2 class="light__title">Everything we make is built to stand <em>in the light.</em></h2>
+        </div>
+        <div class="light__mask"><div class="light__reel" id="lightReel"></div></div>
+        <p class="light__desc" id="lightDesc"></p>
+      </div>
+    </section>
+
+    <!-- ============ 4. WINDOW · zoom into the sky ============ -->
+    <section class="window" id="window">
+      <div class="window__pin">
+        <div class="window__img" id="windowImg" style="background-image:url(../assets/img/window.jpg)"></div>
+        <p class="window__text" id="windowText">Let us show you<br /><em>a better view.</em></p>
+      </div>
+    </section>
+
+    <!-- ============ 5. SKY · case studies ============ -->
+    <section class="sky" id="work">
+      <div class="sky__clouds" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+      <div class="wrap">
+        <div class="sky__head">
+          <p class="kicker kicker--ink">Case studies</p>
+          <h2 class="sky__title">Every project starts with a problem<br />and ends with <em>a number.</em></h2>
+        </div>
+        <div class="cases" id="cases"></div>
+      </div>
+    </section>
+
+    <!-- ============ 6. STEPS · warm stairwell ============ -->
+    <section class="steps" id="steps">
+      <div class="wrap steps__grid">
+        <div class="steps__media">
+          <div class="steps__img" style="background-image:url(../assets/img/stairs.jpg)"></div>
+          <div class="steps__count"><span id="stepNow">01</span> / 05</div>
+        </div>
+        <div class="steps__list">
+          <p class="kicker">How we work</p>
+          <h2 class="steps__title">One step at a time,<br /><em>always upward.</em></h2>
+          <ol id="stepList">
+            <li><span>01</span><h3>Discovery call</h3><p>Thirty minutes on your product, your audience and what winning looks like.</p></li>
+            <li><span>02</span><h3>Story &amp; strategy</h3><p>Series formats, hooks and a 90-day plan built for the platforms your buyers use.</p></li>
+            <li><span>03</span><h3>Script &amp; storyboard</h3><p>Every claim sourced and every disclosure placed before a single frame is animated.</p></li>
+            <li><span>04</span><h3>Craft &amp; review</h3><p>First drafts in 48 hours, with review rounds planned around your compliance team.</p></li>
+            <li><span>05</span><h3>Launch &amp; grow</h3><p>Monthly reviews. We double down on what works and quietly cut what doesn't.</p></li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 8. START · navy to cream gradient ============ -->
+    <section class="start" id="start">
+      <div class="start__mesh" aria-hidden="true"><i></i><i></i><i></i></div>
+      <div class="wrap start__inner">
+        <p class="kicker">Start here</p>
+        <h2 class="start__title">Send us one raw video.<br /><em>We'll edit it for free.</em></h2>
+        <p class="start__sub">Book a 20-minute call, pick one video that matters, and get a finished edit in 72 hours. No contract. Four brands a month.</p>
+        <div class="start__ctas">
+          <a class="pill pill--dark js-booking" href="#" target="_blank" rel="noopener">Book a free sample edit <b>›</b></a>
+          <a class="pill js-email" href="#">Email us</a>
+        </div>
+        <p class="start__email">or write to <span class="js-email-text">hello@capitalmedia.studio</span></p>
+        <div class="start__clocks">
+          <span>New York <b id="cNY">--</b></span>
+          <span>San Francisco <b id="cSF">--</b></span>
+          <span>Our studio <b id="cIN">--</b></span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER · chair at dusk ============ -->
+  <footer class="foot">
+    <div class="foot__img" style="background-image:url(../assets/img/chair-dusk.jpg)"></div>
+    <div class="foot__shade"></div>
+    <div class="foot__inner wrap">
+      <p class="foot__line">Sit back.<br /><em>We've got the edit.</em></p>
+      <div class="foot__word">capital media<i>.</i></div>
+      <div class="foot__bar">
+        <span>© <span id="year"></span> Capital Media</span>
+        <div class="foot__soc" id="socials"></div>
+        <a href="#top">Back to top ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============ CASE STUDY PANEL ============ -->
+  <div class="cpanel" id="cpanel" role="dialog" aria-modal="true" aria-label="Case study" aria-hidden="true">
+    <div class="cpanel__bar">
+      <button id="cpClose" class="pill pill--glass">Close</button>
+      <span id="cpIdx" class="cpanel__idx">01 / 03</span>
+      <button id="cpNext" class="pill pill--glass">Next case <b>›</b></button>
+    </div>
+    <div class="cpanel__scroll" id="cpScroll"><div class="cpanel__body" id="cpBody"></div></div>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="scripts/app.js"></script>
+</body>
+</html>

@@ -333,6 +333,89 @@
     requestAnimationFrame(loop);
   }
 
+  /* ---------------- interactivity ---------------- */
+  const fine = matchMedia("(hover: hover) and (pointer: fine)").matches;
+  function initCursor() {
+    if (!fine) return;
+    const c = $("#cursor"), label = $("#cursorLabel"), p = { x: -100, y: -100 }, m = { x: -100, y: -100 };
+    addEventListener("pointermove", (e) => { m.x = e.clientX; m.y = e.clientY; });
+    (function tick() { p.x = lerp(p.x, m.x, 0.2); p.y = lerp(p.y, m.y, 0.2); c.style.transform = `translate3d(${p.x}px,${p.y}px,0)`; requestAnimationFrame(tick); })();
+    document.addEventListener("pointerover", (e) => {
+      const lab = e.target.closest("[data-cursor]");
+      c.classList.toggle("is-label", !!lab);
+      c.classList.toggle("is-link", !lab && !!e.target.closest("a, button, .light__item"));
+      if (lab) label.textContent = lab.dataset.cursor;
+    });
+  }
+  function initMagnetic() {
+    if (!fine) return;
+    $(".pill, .nav__cta").forEach((el) => {
+      el.addEventListener("pointermove", (e) => {
+        const r = el.getBoundingClientRect();
+        el.style.transform = `translate(${(e.clientX - r.left - r.width / 2) * 0.25}px, ${(e.clientY - r.top - r.height / 2) * 0.3}px)`;
+      });
+      el.addEventListener("pointerleave", () => (el.style.transform = ""));
+    });
+  }
+  function initHeroParallax() {
+    if (!fine) return;
+    const hero = $("#hero");
+    hero.addEventListener("pointermove", (e) => {
+      hero.style.setProperty("--px", (e.clientX / innerWidth - 0.5).toFixed(3));
+      hero.style.setProperty("--py", (e.clientY / innerHeight - 0.5).toFixed(3));
+    });
+    hero.addEventListener("pointerleave", () => { hero.style.setProperty("--px", 0); hero.style.setProperty("--py", 0); });
+  }
+  function initWordReveal() {
+    const io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add("is-in"); io.unobserve(e.target); } }), { threshold: 0.3 });
+    $(".light__title, .sky__title, .steps__title, .wall__title, .start__title, .foot__line").forEach((el) => {
+      let i = 0;
+      const walk = (node) => [...node.childNodes].forEach((ch) => {
+        if (ch.nodeType === 3) {
+          const frag = document.createDocumentFragment();
+          ch.textContent.split(/(\s+)/).forEach((w) => {
+            if (!w) return;
+            if (/^\s+$/.test(w)) return frag.appendChild(document.createTextNode(w));
+            const s = document.createElement("span"); s.className = "wr"; s.style.setProperty("--i", i++); s.textContent = w; frag.appendChild(s);
+          });
+          ch.replaceWith(frag);
+        } else if (ch.nodeType === 1 && ch.tagName !== "BR") walk(ch);
+      });
+      walk(el);
+      io.observe(el);
+    });
+  }
+  function initPanelHover() {
+    if (!fine) return;
+    panels.forEach((p) => {
+      p.dataset.cursor = "Open case";
+      p.addEventListener("pointermove", (e) => {
+        const r = p.getBoundingClientRect(), x = (e.clientX - r.left) / r.width, y = (e.clientY - r.top) / r.height;
+        p.style.setProperty("--rx", `${(x - 0.5) * 10}deg`); p.style.setProperty("--ry", `${(0.5 - y) * 8}deg`);
+        p.style.setProperty("--gx", `${x * 100}%`); p.style.setProperty("--gy", `${y * 100}%`);
+      });
+      p.addEventListener("pointerleave", () => { p.style.setProperty("--rx", "0deg"); p.style.setProperty("--ry", "0deg"); });
+    });
+  }
+  function initWallLight() {
+    const wall = $("#record"), spot = $("#wallSpot");
+    wall.addEventListener("pointermove", (e) => {
+      const r = wall.getBoundingClientRect();
+      spot.style.setProperty("--sx", `${e.clientX - r.left}px`); spot.style.setProperty("--sy", `${e.clientY - r.top}px`);
+    });
+    $("#wallNames li").forEach((li) => li.addEventListener("pointermove", (e) => {
+      const r = li.getBoundingClientRect();
+      li.style.setProperty("--lx", `${e.clientX - r.left}px`); li.style.setProperty("--ly", `${e.clientY - r.top}px`);
+    }));
+  }
+  function initLightClicks() {
+    const n = light.items.length;
+    light.items.forEach((it, i) => it.addEventListener("click", () => {
+      const s = light.section, p = (i / Math.max(1, n - 1) + 0.05) / 1.1;
+      scrollTo({ top: s.offsetTop + p * (s.offsetHeight - innerHeight), behavior: reduce ? "auto" : "smooth" });
+    }));
+  }
+
   initTexture();
   fill();
   initRotator();
@@ -346,5 +429,12 @@
   initAnchors();
   runArts();
   loop();
+  initCursor();
+  initMagnetic();
+  initHeroParallax();
+  initWordReveal();
+  initPanelHover();
+  initWallLight();
+  initLightClicks();
   requestAnimationFrame(() => document.body.classList.add("is-ready"));
 })();
